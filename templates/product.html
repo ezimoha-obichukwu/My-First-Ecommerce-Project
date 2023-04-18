@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for product in all_products %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ product.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              {% comment %} <a class="mr-2" href="#">{{ <product class="name"></product> }}</a> {% endcomment %}
+              {% comment %} <small class="text-muted">{{ product.date_posted|date:"F d, Y" }}</small> {% endcomment %}
+            </div>
+            <h2><a class="article-title" href="">{{ product.name }}</a></h2>
+            <p class="article-content">{{ product.description }}</p>
+            <h2 class="article-content">{{ product.price }}</h2>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
