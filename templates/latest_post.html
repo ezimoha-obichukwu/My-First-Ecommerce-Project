@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="media-head">
+      <div class="article-metadata">
+    <h1 class="article-title">Latest Post</h1>
+    </div>
+    </div><br>
+    {% for latest in all_latest_post %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ latest.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              {% comment %} <a class="mr-2" href="#">{{ <product class="name"></product> }}</a> {% endcomment %}
+              {% comment %} <small class="text-muted">{{ product.date_posted|date:"F d, Y" }}</small> {% endcomment %}
+            </div>
+            <h2><a class="article-title" href="{% url 'single' latest.pk %}">{{ latest.name }}</a></h2>
+            <p class="article-content">{{ latest.description | truncatewords:10}}</p>
+            <h3 class="article-content">₦{{ latest.price }}</h3><br>
+            <small class="btn btn-danger">{{ latest.category }}</small>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
+
+
+
+

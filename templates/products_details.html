@@ -8,8 +8,9 @@
               {% comment %} <small class="text-muted">{{ product.date_posted|date:"F d, Y" }}</small> {% endcomment %}
             </div>
             <h2><a class="article-title" href="">{{ product.name }}</a></h2>
-            <h4 class="article-content">₦{{ product.price }}</h4>
-            <p class="article-content">{{ product.description }}</p>
+            <h5 class="article-content">₦{{ product.price }}</h5>
+            <p class="article-content">{{ product.description }}</p><br>
+            <small class="btn btn-danger">{{ product.category }}</small>
           </div>
         </article>
 {% endblock content %}

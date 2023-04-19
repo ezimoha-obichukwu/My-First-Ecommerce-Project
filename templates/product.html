@@ -10,7 +10,8 @@
             </div>
             <h2><a class="article-title" href="{% url 'single' product.id %}">{{ product.name }}</a></h2>
             <p class="article-content">{{ product.description | truncatewords:30}}</p>
-            <h2 class="article-content">₦{{ product.price }}</h2>
+            <h3 class="article-content">₦{{ product.price }}</h3><br>
+            <small class="btn btn-danger">{{ product.category }}</small>
           </div>
         </article>
     {% endfor %}
